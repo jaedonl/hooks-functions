@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react'
+import './styles/App.scss';
+import { arrayLoop } from './functions/arrayLoop';
+
 
 function App() {
+  const [index, setIndex] = useState(0)
+  const list = [1,2,3,4,5]
+
+
+  const clickFunc = (e) => {    
+    arrayLoop(e, list, index, setIndex)     
+  }
+  // useEffect(() => {    
+  //   const testFunction = async () => {      
+  //   } 
+  //   testFunction()   
+  // }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React Custom Hooks</h1>
+      <h2>In Github</h2>       
+      
+      <button name="prev" onClick={clickFunc}>prev</button>
+      <br/>
+      <button name="next" onClick={clickFunc}>next</button>
     </div>
   );
 }
