@@ -1,4 +1,4 @@
-export function arrayLoop(event, arr, idx, setIdx) {
+export function repeatIndex(event, arr, idx, setIdx) {
 
     if (event.currentTarget.getAttribute('name') === 'prev') {
         if (idx === 1) setIdx(arr.length-1)    
