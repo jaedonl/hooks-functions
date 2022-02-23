@@ -11,6 +11,7 @@ const useFetchData = (apiUrl) => {
             
             setData(res.data)
         } 
+        fetchData()
     }, [apiUrl])
     
     return [data]
